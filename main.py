@@ -24,3 +24,10 @@ if not keyapi:
     print("ERROR: API KEY NOT FOUNDED")
 else:
     genai.configure(api_key = keyapi)
+
+# 3. USERDATA DEVELOPING
+
+class UserData(BaseModel):
+
+    name: str = Field(min_length=3, max_length=20)
+    

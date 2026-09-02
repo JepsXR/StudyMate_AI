@@ -8,3 +8,19 @@ import json
 import os
 import google.generativeai as genai
 import psycopg
+
+# SERVER ACTIVATION 
+
+app = FastAPI(
+    title="StudyMateAI",
+    description="StudyMateAI is an AI agent that can help you with the design of your study strategies",
+    version="1.0.0"
+)
+
+load_dotenv()
+
+keyapi = os.getenv("STUDYMATE_API_KEY")
+if not keyapi:
+    print("ERROR: API KEY NOT FOUNDED")
+else:
+    genai.configure(api_key = keyapi)

@@ -7,6 +7,7 @@ from dotenv import load_dotenv
 import json
 import os
 import google.generativeai as genai
+import logging
 import psycopg
 
 # SERVER ACTIVATION 

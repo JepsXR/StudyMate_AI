@@ -25,6 +25,9 @@ if not keyapi:
     print("ERROR: API KEY NOT FOUNDED")
 else:
     genai.configure(api_key = keyapi)
+    print("Sucessfull Connection with a API Key")
+
+logging.basicConfig(level=logging.INFO)
 
 # 3. USERDATA DEVELOPING
 

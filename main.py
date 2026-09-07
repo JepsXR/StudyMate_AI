@@ -37,3 +37,6 @@ class UserData(BaseModel):
     age: int = Field(...,gt=10, lt=100)
     learning_style: Literal["Visual", "Auditory", "Kinesthetic", "Reading/Writing"] = Field(...,)
     available_hours_per_day: float = Field(gt=0, lt=24)
+    study_subjects: List[str] = Field(
+        default_factory=list, 
+        max_length=4)

@@ -31,7 +31,7 @@ logging.basicConfig(level=logging.INFO)
 
 # 3. USERDATA DEVELOPING
 
-class UserData(BaseModel):
+class StudentData(BaseModel):
 
     name: str = Field(min_length=3, max_length=20)
     age: int = Field(...,gt=10, lt=100)

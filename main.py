@@ -49,3 +49,5 @@ class StudentData(BaseModel):
         ...,
         min_length=10,
         max_length=100)
+
+# 4. DATABASE CREATION

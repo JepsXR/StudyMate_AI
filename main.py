@@ -4,6 +4,8 @@ from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field
 from typing import List, Optional, Literal
 from dotenv import load_dotenv
+from sqlalchemy import Column, Integer, String, Boolean
+from sqlalchemy.orm import DeclarativeBase
 import json
 import os
 import google.generativeai as genai

@@ -61,3 +61,10 @@ connection = psycopg.connect(
     user=os.getenv("DB_USER"),
     password=os.getenv("DB_PASSWORD")
 )
+
+engine = create_engine("DATABASE_URL")
+
+base = DeclarativeBase()
+
+class User(base):
+    __tablename__ = "Users"

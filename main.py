@@ -4,7 +4,7 @@ from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field
 from typing import List, Optional, Literal
 from dotenv import load_dotenv
-from sqlalchemy import Column, Integer, String, Boolean, create_engine
+from sqlalchemy import Column, Integer, String, Boolean, Float, create_engine
 from sqlalchemy.orm import DeclarativeBase, sessionmaker, Mapped, mapped_column
 import json
 import os
@@ -66,9 +66,17 @@ engine = create_engine("DATABASE_URL")
 SessionLocal = sessionmaker(bind=engine)
 
 base = DeclarativeBase()
+
 session = SessionLocal()
 
 class User(base):
     __tablename__ = "Users"
     id = Column(Integer, primary_key=True)
     name: Mapped[str]
+    age: Mapped[int]
+    strongest_learning_style: Mapped[str]
+    info_learning_style: Mapped[str]
+    available_hours_per_day: Mapped[float]
+    study_subjects: Mapped[list[str]]
+    concentration_level: Mapped[str]
+    info_exam: Mapped[str]

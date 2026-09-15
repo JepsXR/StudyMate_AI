@@ -5,6 +5,7 @@ from pydantic import BaseModel, Field
 from typing import List, Optional, Literal
 from dotenv import load_dotenv
 from sqlalchemy import Column, Integer, String, Float, create_engine, Enum
+from sqlalchemy.dialects.postgresql import ARRAY
 from sqlalchemy.orm import DeclarativeBase, sessionmaker, Mapped, mapped_column
 import json
 import os
@@ -79,6 +80,9 @@ class User(base):
             Enum("Visual", "Auditory", "Kinesthetic", "Reading/Writing", "Other"), default="Other")
     info_learning_style: Mapped[str] = mapped_column(String(100))
     available_hours_per_day: Mapped[float] = mapped_column(Float(24))
-    study_subjects: Mapped[list[str]]
-    concentration_level: Mapped[str]
-    info_exam: Mapped[str]
+    study_subjects: Mapped[list[str]] = mapped_column(ARRAY(String), default=list)
+    concentration_level: Mapped[Literal[
+        "Low", "Moderate", "High"]] = mapped_column(
+            Enum("Low", "Moderate", "High"), default="Moderate"
+        )
+    info_exam: Mapped[str] = mapped_column(String(100))

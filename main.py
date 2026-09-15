@@ -5,7 +5,7 @@ from pydantic import BaseModel, Field
 from typing import List, Optional, Literal
 from dotenv import load_dotenv
 from sqlalchemy import Column, Integer, String, Boolean, create_engine
-from sqlalchemy.orm import DeclarativeBase, sessionmaker
+from sqlalchemy.orm import DeclarativeBase, sessionmaker, Mapped, mapped_column
 import json
 import os
 import google.generativeai as genai
@@ -66,8 +66,9 @@ engine = create_engine("DATABASE_URL")
 SessionLocal = sessionmaker(bind=engine)
 
 base = DeclarativeBase()
+session = SessionLocal()
 
 class User(base):
     __tablename__ = "Users"
-
-session = SessionLocal()
+    id = Column(Integer, primary_key=True)
+    name: Mapped[str]

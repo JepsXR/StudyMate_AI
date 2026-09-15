@@ -63,9 +63,11 @@ connection = psycopg.connect(
 )
 
 engine = create_engine("DATABASE_URL")
-SessionLoad = sessionmaker(bind=engine)
+SessionLocal = sessionmaker(bind=engine)
 
 base = DeclarativeBase()
 
 class User(base):
     __tablename__ = "Users"
+
+session = SessionLocal()

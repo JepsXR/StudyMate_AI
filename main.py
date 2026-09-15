@@ -5,7 +5,7 @@ from pydantic import BaseModel, Field
 from typing import List, Optional, Literal
 from dotenv import load_dotenv
 from sqlalchemy import Column, Integer, String, Boolean, create_engine
-from sqlalchemy.orm import DeclarativeBase
+from sqlalchemy.orm import DeclarativeBase, sessionmaker
 import json
 import os
 import google.generativeai as genai
@@ -63,6 +63,7 @@ connection = psycopg.connect(
 )
 
 engine = create_engine("DATABASE_URL")
+SessionLoad = sessionmaker(bind=engine)
 
 base = DeclarativeBase()
 

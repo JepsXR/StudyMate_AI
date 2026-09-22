@@ -48,17 +48,21 @@ Since PostgreSQL is configured within the containerized setup, Docker Compose ma
 
 1. **Clone the repository:**
    ```bash
-   git clone [https://github.com/JepsXR/StudyMate_AI.git](https://github.com/JepsXR/StudyMate_AI.git)
+   git clone https://github.com/JepsXR/StudyMate_AI.git
    cd StudyMate_AI
+   ```
    
 2. **Configure environment variables:**
 Create a .env file in the root directory:
-`DATABASE_URL=postgresql+psycopg://postgres:postgres@db:5432/studymate_db
-GEMINI_API_KEY=your_gemini_api_key_here`
+```
+DATABASE_URL=postgresql+psycopg://postgres:postgres@db:5432/studymate_db
+GEMINI_API_KEY=your_gemini_api_key_here
+```
 
 3. **Build and run containers**
    ```bash
    docker-compose up --build
+   ```
 
 ### Option 2: Running with Python Virtual Environment (venv)
 

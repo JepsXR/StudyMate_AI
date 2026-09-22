@@ -1,6 +1,52 @@
-# StudyMate_AI
+# StudyMate_AI 📚🤖
 
-StudyMateAI is a Backend AI Agent that can help you to create an effective study methods according with your context and forms for learning. In this moment StudyMateAI is in development, but has now a safe data architecture with Pydantic and SQLAlchemy, containerization with Docker and robust database with PostgreSQL, safe practices with a environment variables and digital environment (venv) and asyncronical and agile frameworks like a FastAPI. 
+**StudyMate_AI** is a backend AI agent designed to help users generate effective, personalized study methods tailored to their specific learning styles and academic context. 
 
-## Roadmap
-In the next days, StudyMateAI are going to have a integration with a RESTful APIs, for example Gemini API, that is very useful for generate a personalizated advices, serve in a effective form to users, incluiding his needs, and Gemini will can use according with a study methods of users some Notion tools for create and organize study blocks, tasks lists and modify tasks status. And also will can use a Google Calendar API for mark important dates (example: Exam and cuestionary dates).
+Currently in active development, the project features a robust data architecture using **Pydantic** and **SQLAlchemy**, containerization via **Docker**, a persistent **PostgreSQL** database, asynchronous API execution with **FastAPI**, and secure configuration management using environment variables.
+
+---
+
+## 📌 Features & Architecture
+
+* **Asynchronous RESTful API:** High-performance backend built with FastAPI and Uvicorn.
+* **Data Validation & Persistence:** Data schemas defined with Pydantic v2 and mapped through SQLAlchemy ORM.
+* **Production-Ready Database:** PostgreSQL integration managed via the `psycopg` driver.
+* **Containerized Environment:** Fully isolated multi-container setup running Python and PostgreSQL via Docker Compose.
+* **Secure Credentials:** Environment isolation and secrets management via `python-dotenv`.
+
+---
+
+## 🗺️ Roadmap
+
+* **Google Gemini AI Integration:** Intelligent analysis of learning habits to generate tailored study strategies and recommendations.
+* **Notion API Integration:** Automatic creation and organization of study blocks, task lists, and status updates directly in Notion workspaces (`notion-client`).
+* **Google Calendar API Integration:** Automated scheduling for exams, assignment deadlines, and review sessions using OAuth2 authentication.
+
+---
+
+## 🛠️ Tech Stack
+
+| Component | Technology | Version |
+| :--- | :--- | :--- |
+| **Framework** | FastAPI | `0.141.1` |
+| **ASGI Server** | Uvicorn | `0.53.0` |
+| **ORM** | SQLAlchemy | `2.0.54` |
+| **Database Driver** | psycopg (PostgreSQL) | `3.3.6` |
+| **Data Validation** | Pydantic | `2.13.5` |
+| **Integrations** | Google Generative AI | `0.8.6` |
+| | Notion Client | `3.1.0` |
+| **Environment Vars** | python-dotenv | `1.2.3` |
+| **Containerization** | Docker / Docker Compose | Latest |
+
+---
+
+## ⚙️ Local Setup & Installation
+
+### Option 1: Running with Docker (Recommended)
+
+Since PostgreSQL is configured within the containerized setup, Docker Compose manages both the application and the database.
+
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/JepsXR/StudyMate_AI.git](https://github.com/JepsXR/StudyMate_AI.git)
+   cd StudyMate_AI
